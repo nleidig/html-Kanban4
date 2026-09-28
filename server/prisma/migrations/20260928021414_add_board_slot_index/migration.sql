@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Board" ADD COLUMN     "slotIndex" INTEGER NOT NULL DEFAULT 0;

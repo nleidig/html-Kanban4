@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f4f5f7;
+  color: #172b4d;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  background: #0052cc;
+  color: white;
+  font-size: 14px;
+}
+
+button.danger {
+  background: #de350b;
+}
+
+input,
+textarea {
+  padding: 8px;
+  border: 1px solid #dfe1e6;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.error-text {
+  color: #de350b;
+}
+
+/* Auth pages */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.auth-form {
+  background: white;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(9, 30, 66, 0.25);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+/* Dashboard */
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-header > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.create-board-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.create-board-form input {
+  flex: 1;
+}
+
+.board-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-auto-rows: minmax(64px, auto);
+  gap: 10px;
+}
+
+.board-list-item {
+  width: 100%;
+  background: white;
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 64px;
+  box-shadow: 0 1px 2px rgba(9, 30, 66, 0.15);
+  cursor: grab;
+}
+
+.board-list-empty-slot {
+  min-height: 64px;
+  border-radius: 6px;
+  border: 1px dashed rgba(9, 30, 66, 0.15);
+}
+
+.board-list-empty-slot.is-over {
+  border-color: #0052cc;
+  background: rgba(0, 82, 204, 0.06);
+}
+
+.board-list-item a {
+  color: #0052cc;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
+
+.board-list-item button {
+  align-self: flex-end;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+/* Board detail */
+.board-page {
+  padding: 24px;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.board-header a {
+  color: #0052cc;
+  text-decoration: none;
+}
+
+.columns-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.column {
+  background: #ebecf0;
+  border-radius: 8px;
+  width: 640px;
+  flex-shrink: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.column-header {
+  font-weight: 600;
+  cursor: grab;
+}
+
+.column-header h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.column-cards {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 4px;
+  align-content: flex-start;
+  min-height: 20px;
+}
+
+.card-item {
+  background: white;
+  border-radius: 4px;
+  padding: 4px 5px;
+  box-shadow: 0 1px 2px rgba(9, 30, 66, 0.2);
+  cursor: grab;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-height: 44px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-description {
+  margin: 2px 0 0;
+  font-size: 8px;
+  color: #5e6c84;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.add-card-form,
+.add-column-form {
+  display: flex;
+  gap: 6px;
+}
+
+.add-card-form input,
+.add-column-form input {
+  flex: 1;
+}
+
+.add-column-form {
+  width: 640px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 30, 66, 0.54);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-actions > div {
+  display: flex;
+  gap: 8px;
+}
+
+.page-status {
+  padding: 32px;
+  text-align: center;
+}

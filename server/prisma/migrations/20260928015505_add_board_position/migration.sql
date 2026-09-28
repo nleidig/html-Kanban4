@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Board" ADD COLUMN     "position" DOUBLE PRECISION NOT NULL DEFAULT 0;
